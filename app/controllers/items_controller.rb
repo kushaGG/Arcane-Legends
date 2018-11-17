@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
   end
 private
   def item_params
-    params.require(:item).permit(:name,:character_class, :rarity, :lvl)
+    params.require(:item).permit(:character_id, :name, :character_class, :rarity, :lvl)
   end
    def find_item
       @item = Item.find_by(id:params[:id])

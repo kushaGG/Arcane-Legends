@@ -1,6 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  character_id: 1
+  item: MyString
   name: MyString
   type: 
   character_class: MyString
@@ -11,6 +13,8 @@ one:
   INT: 1
 
 two:
+  character_id: 1
+  item: MyString
   name: MyString
   type: 
   character_class: MyString

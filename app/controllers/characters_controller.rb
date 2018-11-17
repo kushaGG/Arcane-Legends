@@ -9,12 +9,12 @@ class CharactersController < ApplicationController
   	@character = Character.new
   end
   def create
-  	@character = current_user.characters.build(character_params)
+    @character = current_user.Characters.build(character_params)
     if @character.save
-  		redirect_to character_path(@character.id)
-  	end
-  	
+      redirect_to characters_path
+    end
   end
+  
 
   def show
 

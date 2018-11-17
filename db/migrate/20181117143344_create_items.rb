@@ -1,6 +1,8 @@
 class CreateItems < ActiveRecord::Migration[5.1]
   def change
     create_table :items do |t|
+      t.integer :character_id
+      t.string :item
       t.string :name
       t.string :type
       t.string :character_class
