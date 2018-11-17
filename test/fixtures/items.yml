@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  character_class: MyString
+  rarity: MyString
+  lvl: 1
+  STR: 1
+  DEX: 1
+  INT: 1
+
+two:
+  name: MyString
+  type: 
+  character_class: MyString
+  rarity: MyString
+  lvl: 1
+  STR: 1
+  DEX: 1
+  INT: 1

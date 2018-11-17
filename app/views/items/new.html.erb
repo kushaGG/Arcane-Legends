@@ -1,0 +1,21 @@
+<h1>Items#new</h1>
+<p>Find me in app/views/items/new.html.erb</p>
+
+<%= form_for :item, url: items_path do |f| %>
+<strong>name</strong><br>
+<%= f.text_field :name %><br>
+<strong>choose class</strong><br>
+<%= f.radio_button :character_class, 'Warrior' %> Warrior<br />
+<%= f.radio_button :character_class, 'Rogue' %> Rogue<br />
+<%= f.radio_button :character_class, 'Mage' %> Mage<br />
+<strong>choose rarity</strong><br>
+<%= f.radio_button :rarity, 'arcane' %> arcane<br />
+<%= f.radio_button :rarity, 'mythic' %> mythic<br />
+<%= f.radio_button :rarity, 'legendary' %> legendary<br />
+<%= f.radio_button :rarity, 'epic' %> epic<br />
+<%= f.radio_button :rarity, 'rare' %> rare<br />
+<%= f.radio_button :rarity, 'common' %> common<br />
+<strong>lvl</strong><br>
+<%= f.text_field :lvl %><br>
+<%= f.submit "Create" %>
+<% end %>
