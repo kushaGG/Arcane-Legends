@@ -9,9 +9,11 @@ class CharactersController < ApplicationController
   	@character = Character.new
   end
   def create
-    @character = current_user.characters.build(character_params)
+    @character = current_user.build_character(character_params)
     if @character.save
       redirect_to characters_path
+    else
+      render 'new'
     end
   end
 
@@ -30,7 +32,7 @@ class CharactersController < ApplicationController
   end
 private
   def character_params
-    params.require(:character).permit(:user_id,:nickname,:character_class)
+    params.require(:character).permit(:user_id,:nickname,:character_class, :lvl)
   end
    def find_character
       @character = Character.find_by(id:params[:id])

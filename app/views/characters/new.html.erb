@@ -2,6 +2,19 @@
 <p>Find me in app/views/characters/new.html.erb</p>
 
 <%= form_for @character, url: {action: "create"} do |f| %>
+
+<% if @character.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
+ 
+    <ul>
+    <% @character.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li> 
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<br>
 <strong>nickname</strong><br>
 <%= f.text_field :nickname %><br>
 <strong>choose class</strong><br>

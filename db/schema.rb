@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20181117143344) do
     t.integer "user_id"
     t.string "nickname"
     t.string "character_class"
-    t.integer "lvl"
+    t.integer "lvl", default: 1
     t.integer "STR"
     t.integer "DEX"
     t.integer "INT"
