@@ -10,6 +10,21 @@ class CharactersController < ApplicationController
   end
   def create
     @character = current_user.build_character(character_params)
+    if @character.character_class == "Warrior"
+      @character.STR = '20'
+      @character.DEX = '15'
+      @character.INT = '13'
+    end
+    if @character.character_class == "Rogue"
+      @character.STR = '15'
+      @character.DEX = '20'
+      @character.INT = '14'
+    end
+     if @character.character_class == "Mage"
+      @character.STR = '13'
+      @character.DEX = '15'
+      @character.INT = '20'
+    end
     if @character.save
       redirect_to characters_path
     else
@@ -29,6 +44,10 @@ class CharactersController < ApplicationController
 
   def destroy
   	
+  end
+
+  def check_character
+    
   end
 private
   def character_params

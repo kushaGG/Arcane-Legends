@@ -8,4 +8,6 @@ class Character < ApplicationRecord
     			  message: "only allows letters" }
     	validates :nickname, length: { in: 3..16 }
     	validates :nickname, uniqueness: true
+
+    	
 end

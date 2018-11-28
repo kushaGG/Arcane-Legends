@@ -1,9 +1,9 @@
 <h1>Characters#show</h1>
 <p>Find me in app/views/characters/show.html.erb</p>
 
-<%= @character.user.nickname %><br/>
-<%= @character.user.characters_class %><br/>
-<%= @character.user.lvl %><br/>
+<%= @character.nickname %><br/>
+<%= @character.character_class %><br/>
+<%= @character.lvl %><br/>
 <% if @character.user_id == current_user.id %>
 <%= link_to "Edit", edit_character_path(@character.id) %><br/>
 <%= link_to "Delete", character_path(@character.id), method: :delete %><br/>
