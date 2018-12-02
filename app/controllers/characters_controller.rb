@@ -26,7 +26,7 @@ class CharactersController < ApplicationController
       @character.INT = '20'
     end
     if @character.save
-      redirect_to characters_path
+      redirect_to character_path(current_user.character)
     else
       render 'new'
     end
@@ -37,16 +37,21 @@ class CharactersController < ApplicationController
   end
 
   def edit
+    
   end
   def update
   	
   end
 
   def destroy
-  	
+  	@character.destroy
+    redirect_to root_path
   end
 
   def check_character
+    
+  end
+  def redir_char
     
   end
 private

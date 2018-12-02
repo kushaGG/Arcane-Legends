@@ -1,0 +1,2 @@
+class Bosse < ApplicationRecord
+end

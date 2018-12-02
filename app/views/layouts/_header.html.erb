@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <%= link_to "Back", root_path %> |
+  <% if current_user.character.nil? %>
+     <%= link_to "Create character", new_character_path %> |
+  <% else %>
+    <%= link_to "character", character_path(current_user.character) %> |
+  <% end %>
+
+    <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
+<% else %>
+   <%= link_to "Login", new_user_session_path %>
+<% end %>
+<hr>
