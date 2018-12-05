@@ -4,10 +4,9 @@ class CreateCharacters < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.string :nickname
       t.string :character_class
-      t.integer :lvl, default: 1
-      t.integer :STR
-      t.integer :DEX
-      t.integer :INT
+      t.integer :lvl
+      t.integer :damage
+      t.integer :hp
 
       t.timestamps
     end

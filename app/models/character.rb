@@ -1,13 +1,18 @@
 class Character < ApplicationRecord
-	    belongs_to :user 
+	belongs_to :user
+	has_many :items
 
-	    has_many :items
+	validates :nickname, :character_class, presence: true
+	validates :nickname, format: { with: /\A[a-zA-Z]+\z/,
+	    		message: "only allows letters" }
+	validates :nickname, length: { in: 3..16 }
+	validates :nickname, uniqueness: true
+	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-	    validates :nickname, :character_class, presence: true
-	    validates :nickname, format: { with: /\A[a-zA-Z]+\z/,
-    			  message: "only allows letters" }
-    	validates :nickname, length: { in: 3..16 }
-    	validates :nickname, uniqueness: true
-
-    	
+  def set_avatar
+    if self.avatar
+      "/assets/#{self.character_class}.png"
+    end
+  end
 end

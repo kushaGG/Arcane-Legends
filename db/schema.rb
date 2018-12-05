@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202153607) do
+ActiveRecord::Schema.define(version: 20181205082505) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -52,12 +52,15 @@ ActiveRecord::Schema.define(version: 20181202153607) do
     t.integer "user_id"
     t.string "nickname"
     t.string "character_class"
-    t.integer "lvl", default: 1
-    t.integer "STR"
-    t.integer "DEX"
-    t.integer "INT"
+    t.integer "lvl"
+    t.integer "damage"
+    t.integer "hp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "enemies", force: :cascade do |t|

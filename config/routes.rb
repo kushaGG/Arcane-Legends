@@ -1,29 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'bosses/index'
-
-  get 'bosses/new'
-
-  get 'bosses/edit'
-
-  get 'enemys/index'
-
-  get 'enemys/new'
-
-  get 'enemys/edit'
-
-  get 'locations/new'
-
-  get 'locations/index'
-
-  get 'locations/show'
-
-  get 'game_sessions/index'
-
-  get 'game_sessions/new'
-
-  get 'game_sessions/edit'
-
+#  root 'characters#index'
   root 'pages#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

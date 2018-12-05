@@ -1,11 +1,14 @@
 <h1>Characters#show</h1>
 <p>Find me in app/views/characters/show.html.erb</p>
 
-<%= @character.nickname %><br/>
-<%= @character.character_class %><br/>
-<%= @character.lvl %><br/>
+<%= image_tag @character.set_avatar %> <br>
+<strong>Class: </strong> <%= @character.character_class %><br/>
+<strong>Nickname: </strong><%= @character.nickname %><br/>
+<strong>Lvl: </strong><%= @character.lvl %><br/>
+<strong>HealthPoint: </strong><%= @character.hp %><br/>
+<strong>Damage: </strong><%= @character.damage %><br/>
+
 <% if @character.user_id == current_user.id %>
 <%= link_to "Edit", edit_character_path(@character.id) %><br/>
-<%= link_to "Delete", character_path(@character.id), method: :delete %><br/>
+<%= link_to "Delete", character_path(@character.id), method: :delete, data: {confirm: "are you sure?"} %><br/>
 <% end %>
-<%= link_to "Back", root_path%><br/>

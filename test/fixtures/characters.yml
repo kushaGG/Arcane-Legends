@@ -5,15 +5,13 @@ one:
   nickname: MyString
   character_class: MyString
   lvl: 1
-  STR: 1
-  DEX: 1
-  INT: 1
+  damage: 1
+  hp: 1
 
 two:
   user_id: 1
   nickname: MyString
   character_class: MyString
   lvl: 1
-  STR: 1
-  DEX: 1
-  INT: 1
+  damage: 1
+  hp: 1

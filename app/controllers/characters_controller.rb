@@ -1,29 +1,28 @@
 class CharactersController < ApplicationController
   before_action :authenticate_user!
-     before_action :find_character, only: [:show, :edit, :update, :destroy]
+  before_action :find_character, only: [:show, :edit, :update, :destroy]
   def index
-  	@characters = Character.all
+    @characters = Character.all
   end
 
   def new
   	@character = Character.new
   end
+
   def create
     @character = current_user.build_character(character_params)
+    @character.lvl = '1'
     if @character.character_class == "Warrior"
-      @character.STR = '20'
-      @character.DEX = '15'
-      @character.INT = '13'
+      @character.damage = '15'
+      @character.hp = '300'
     end
     if @character.character_class == "Rogue"
-      @character.STR = '15'
-      @character.DEX = '20'
-      @character.INT = '14'
+      @character.damage = '19'
+      @character.hp = '250'
     end
-     if @character.character_class == "Mage"
-      @character.STR = '13'
-      @character.DEX = '15'
-      @character.INT = '20'
+    if @character.character_class == "Mage"
+      @character.damage = '23'
+      @character.hp = '200'
     end
     if @character.save
       redirect_to character_path(current_user.character)
@@ -39,6 +38,7 @@ class CharactersController < ApplicationController
   def edit
     
   end
+
   def update
   	
   end
@@ -51,14 +51,12 @@ class CharactersController < ApplicationController
   def check_character
     
   end
-  def redir_char
-    
-  end
+ 
 private
   def character_params
-    params.require(:character).permit(:user_id,:nickname,:character_class, :lvl)
+    params.require(:character).permit(:user_id,:nickname,:character_class, :lvl, :avatar)
   end
-   def find_character
-      @character = Character.find_by(id:params[:id])
-    end
+  def find_character
+    @character = Character.find_by(id:params[:id])
+  end
 end
