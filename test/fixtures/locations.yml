@@ -3,11 +3,11 @@
 one:
   character_id: 1
   enemy_id: 1
-  boss_id: 1
+  bosse_id: 1
   name: MyString
 
 two:
   character_id: 1
   enemy_id: 1
-  boss_id: 1
+  bosse_id: 1
   name: MyString

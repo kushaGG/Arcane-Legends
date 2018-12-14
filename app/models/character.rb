@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
 	belongs_to :user
+	belongs_to :game_session
 	has_many :items
 
 	validates :nickname, :character_class, presence: true
