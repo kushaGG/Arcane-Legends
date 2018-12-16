@@ -1,13 +1,16 @@
 class Character < ApplicationRecord
 	belongs_to :user
-	belongs_to :game_session
 	has_many :items
+	has_one :location
+	has_one :fight_enemy
+
+
 
 	validates :nickname, :character_class, presence: true
+	validates :nickname, uniqueness: true
 	validates :nickname, format: { with: /\A[a-zA-Z]+\z/,
 	    		message: "only allows letters" }
 	validates :nickname, length: { in: 3..16 }
-	validates :nickname, uniqueness: true
 	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 AdminUser.create!(email: 'admin@example.com', password: '1234567890', password_confirmation: '1234567890') if Rails.env.production?
+Location.create!(name: 'Brackenridge Forest')
+Location.create!(name: 'Brackenridge Village')
+Location.create!(name: 'Gold Mine')

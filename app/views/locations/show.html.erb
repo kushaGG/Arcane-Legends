@@ -1,2 +1,6 @@
 <h1>Locations#show</h1>
 <p>Find me in app/views/locations/show.html.erb</p>
+
+<strong>Location name: </strong> <%= @location.name %><br/>
+
+<strong>Enemys: <%= @location.enemies.collect{|enemy| enemy.name}.join(" ")%> </strong><br>
