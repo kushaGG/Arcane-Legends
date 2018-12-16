@@ -1,2 +1,17 @@
 <h1>Enemys#new</h1>
 <p>Find me in app/views/enemys/new.html.erb</p>
+
+<%= form_for @enemy, url: {action: "create"} do |f| %>
+<strong>name</strong><br>
+<%= f.text_field :name %><br>
+<strong>lvl</strong><br>
+<%= f.text_field :lvl %><br>
+<strong>hp</strong><br>
+<%= f.text_field :hp %><br>
+<strong>damage</strong><br>
+<%= f.text_field :damage %><br>
+<strong>location</strong>
+<%= f.select :location_id  , Location.all.collect {|p| [ p.name, p.id ]}%> <br>
+
+<%= f.submit "Create" %>
+<% end %>

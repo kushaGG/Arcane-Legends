@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  lvl: 1
-  location_id: 1
+  enemy_id: 1
+  character_id: 1
   hp: 1
-  damage: 1
 
 two:
-  name: MyString
-  lvl: 1
-  location_id: 1
+  enemy_id: 1
+  character_id: 1
   hp: 1
-  damage: 1

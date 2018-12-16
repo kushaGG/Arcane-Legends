@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181214090220) do
+ActiveRecord::Schema.define(version: 20181216114504) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,21 +38,11 @@ ActiveRecord::Schema.define(version: 20181214090220) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "bosses", force: :cascade do |t|
-    t.string "name"
-    t.integer "lvl"
-    t.integer "location_id"
-    t.integer "hp"
-    t.integer "damage"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "characters", force: :cascade do |t|
     t.integer "user_id"
     t.string "nickname"
     t.string "character_class"
-    t.integer "lvl"
+    t.integer "lvl", default: 1
     t.integer "damage"
     t.integer "hp"
     t.datetime "created_at", null: false
@@ -62,6 +52,9 @@ ActiveRecord::Schema.define(version: 20181214090220) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer "location_id"
+    t.integer "num"
+    t.integer "fight_enemy_id"
   end
 
   create_table "enemies", force: :cascade do |t|
@@ -72,11 +65,14 @@ ActiveRecord::Schema.define(version: 20181214090220) do
     t.integer "damage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "boss"
+    t.integer "num"
   end
 
-  create_table "game_sessions", force: :cascade do |t|
+  create_table "fight_enemies", force: :cascade do |t|
+    t.integer "enemy_id"
     t.integer "character_id"
-    t.integer "location_id"
+    t.integer "hp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -97,9 +93,7 @@ ActiveRecord::Schema.define(version: 20181214090220) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.integer "character_id"
     t.integer "enemy_id"
-    t.integer "bosse_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

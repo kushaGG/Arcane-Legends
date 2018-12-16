@@ -1,6 +1,4 @@
 class Location < ApplicationRecord
-	belongs_to :game_session
-
-	has_one :bosse
-	has_many :enemys
+	has_many :enemies
+	#has_many :characters
 end
