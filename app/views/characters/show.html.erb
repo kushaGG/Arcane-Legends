@@ -1,5 +1,4 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<h1>Your character</h1>
 
 <%= image_tag @character.set_avatar %> <br>
 <strong>Class: </strong> <%= @character.character_class %><br/>
@@ -10,6 +9,6 @@
 <strong>Damage: </strong><%= @character.damage %><br/>
 
 <% if @character.user_id == current_user.id %>
-<%= link_to "Edit", edit_character_path(@character.id) %><br/>
-<%= link_to "Delete", character_path(@character.id), method: :delete, data: {confirm: "are you sure?"} %><br/>
+<h5><%= link_to "Change nickname", edit_character_path(@character.id) %> | 
+	<%= link_to "Delete", character_path(@character.id), method: :delete, data: {confirm: "are you sure?"} %><br/></h5>	
 <% end %>

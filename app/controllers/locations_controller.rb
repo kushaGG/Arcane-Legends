@@ -27,8 +27,22 @@ class LocationsController < ApplicationController
   	end
   	if(@character.fight_enemy_id)
 
-  		@character.fight_enemy.dead
-  		redirect_to locations_path if @character.fight_enemy.enemy.boss 
+
+      if (@character.fight_enemy.enemy.hp <= 0)
+        @character.fight_enemy.dead
+      else
+        @character.fight_enemy.fight
+      end
+  		
+
+  		if @character.fight_enemy.enemy.boss
+        if @character.fight_enemy.enemy.hp <= 0
+          @character.fight_enemy.dead
+          flash[:notice] = "You WIN"
+          redirect_to locations_path
+        end
+  			
+  		end
 
   		#Якщо битва продовжується
   	else
@@ -56,6 +70,6 @@ class LocationsController < ApplicationController
   	end
 
   	def find_character
-  		@character=current_user.character
+  		@character = current_user.character
   	end
 end

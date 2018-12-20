@@ -1,14 +1,9 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
-
-
+<h1>Choose a location</h1>
 <% if @locations == [] %>
     <p>nope</p>
 <% else %>
     <% @locations.each do |l| %>
-    	<strong>name</strong> <br>
-   		<%= l.name %><br/>
-		<%= link_to "Read More", location_path(l.id) %>
+		<h3><strong><%= link_to l.name, location_path(l.id) %></strong></h3>
    		<hr>
     <% end %>
 <% end %>

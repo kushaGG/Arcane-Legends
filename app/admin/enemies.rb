@@ -11,5 +11,6 @@ ActiveAdmin.register Enemy do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+permit_params :lvl
 
 end

@@ -1,7 +1,8 @@
 <% if user_signed_in? %>
-  <%= link_to "Back", root_path %> |
-  <%=  link_to  "map", locations_path  %> |
-    <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
+  <%= link_to "Character", character_path(current_user.id) %> |
+  <%= link_to "Map", locations_path  %> |
+	<%= link_to "Rules", page_path(current_user.id)  %> | 
+  <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
 <% else %>
    <%= link_to "Login", new_user_session_path %>
 <% end %>

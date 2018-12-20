@@ -39,7 +39,11 @@ class CharactersController < ApplicationController
   end
 
   def update
-  	
+  	if @character.update(character_params)
+      redirect_to character_path(current_user.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
