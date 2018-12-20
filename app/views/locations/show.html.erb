@@ -1,6 +1,11 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h2><strong>Location name: </strong> <%= @location.name %> (<strong>List of enemys: <%= @location.enemies.collect{|enemy| enemy.name}.join(", ")%></strong>)</h2>
+<h4><strong>Current enemy: <%= @character.fight_enemy.enemy.name %></strong></h4>
+<% if @character.fight_enemy.enemy.boss %>
+	<h4><strong>BOSS</strong></h4>
+<% end %>
+<h5><strong>Enemy damage: <%= @character.fight_enemy.enemy.damage %></strong></h5>
+<h5><strong>Enemy health: <%= @character.fight_enemy.enemy.hp %></strong></h5>
 
-<strong>Location name: </strong> <%= @location.name %><br/>
 
-<strong>Enemys: <%= @location.enemies.collect{|enemy| enemy.name}.join(" ")%> </strong><br>
+
+

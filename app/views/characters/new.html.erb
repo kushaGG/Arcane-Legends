@@ -1,6 +1,4 @@
-<h1>Characters#new</h1>
-<p>Find me in app/views/characters/new.html.erb</p>
-
+<h1>Create your character</h1>
 
 <%= form_for @character, url: {action: "create"} do |f| %>
 
@@ -17,11 +15,14 @@
 <% end %>
 
 <br>
-<strong>nickname</strong><br>
+<h4><strong>Enter your nickname</strong><br></h4>
 <%= f.text_field :nickname %><br>
-<strong>choose class</strong><br>
+<h4><strong>choose class</strong><br></h4> 
+
 <%= f.collection_radio_buttons(:character_class,  [['Warrior', 'Warrior'] ,['Rogue', 'Rogue'], ['Mage', 'Mage']], :first, :last) do |b| %>
   <%= b.label { b.radio_button + image_tag('/assets/'+b.text+'.png') } %>
 <% end %>
+<br>
+<br>
 <%= f.submit "Create" %>
 <% end %>
