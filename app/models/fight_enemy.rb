@@ -1,4 +1,5 @@
 class FightEnemy < ApplicationRecord
+
 	belongs_to :enemy
 	belongs_to :character
 
@@ -47,7 +48,5 @@ class FightEnemy < ApplicationRecord
 		#@character.fight_enemy.deat
 		delete
 	end
-
-
 
 end
